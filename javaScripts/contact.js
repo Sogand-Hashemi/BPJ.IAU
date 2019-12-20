@@ -43,9 +43,40 @@ var myMap = new ol.Map({
     key: 'web.mPttfbJe4SdnCGZpsWwQF6NnIrg6zzkVpOpEZ8S4',
     maptype: 'dreamy-gold',
     poi: true,
-    traffic: false,
+    traffic: true,
     view: new ol.View({
         center: ol.proj.fromLonLat([50.835609,35.676598]),
         zoom: 16
     })
 });
+
+
+// var myMap = new L.Map('map', {
+//     key: 'web.mPttfbJe4SdnCGZpsWwQF6NnIrg6zzkVpOpEZ8S4',
+//     maptype: 'dreamy',
+//     poi: true,
+//     traffic: true,
+//     center: [50.835609,35.676598],
+//     zoom: 16
+// });
+
+// $("#email-btn").click(function() {
+//     if (($(".email-input").val() === "")) {
+//         $("#error-email").slideDown();
+//     } else {
+//         $("#error-email").slideUp();
+//     }
+// });
+
+
+// $(window).on('click', function(e) {
+
+//     let $target = $(e.target);
+
+//     if (!$target.is('.email-button') &&
+//         !$target.parents('.email-button').length
+//     ) {
+//         $('#error-email').fadeOut('slow');
+//     }
+
+// });
