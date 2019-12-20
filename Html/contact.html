@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
     <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/contact.css">
+
+    <link rel="stylesheet" type="text/css" href="https://static.neshan.org/sdk/openlayers/5.3.0/ol.css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script type="text/javascript" src="https://static.neshan.org/sdk/openlayers/5.3.0/ol.js"></script>
 </head>
 <body>
     <div class="body-cover"></div>
@@ -54,24 +60,30 @@
         </div>
     </div>
 
-
-
-
-
     <header>
         <div class="first-div-h">
             <ul class="nav main-nav nav-pills">
-                <li role="presentation" class="active"><a class="font15" href="#"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
+                <li role="presentation"><a class="font15" href="./index.html"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
                 <!-- <li role="presentation"><a class="font15" style="font-weight: bold;" href="#">ورود / ثبت نام</a></li> -->
                 <!-- <li role="presentation"><a class="font13" style="font-weight: bold;" href="#">درباه ی ما</a></li> -->
-                <li role="presentation"><a class="font15" style="font-weight: bold;" href="./contact.html">تماس با ما</a></li>
+                <li role="presentation" class="active"><a class="font15" style="font-weight: bold;" href="#">تماس با ما</a></li>
             </ul>
             <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
             <span class="date font17" id="date"></span>
             <span class="time font17" id="time"></span>
             <span class="log-btn font17 date">ورود / ثبت نام</span>
         </div>
-        <div class="second-div-h">
+    </header>
+    <main>
+        <div class="container">
+                <!-- <div class="testdiv"></div> -->
+                
+                    <div id="map"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="first-div-f">
             <ul class="ul-for-title">
                 <!-- <li class="font17 text-center">باشگاه پژوهشگران جوان و نخبگان،</li> -->
                 <li class="text-center"><img class="bpj-logo hidden-xs" src="../images/Logo.png" alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>   
@@ -81,14 +93,13 @@
                 <li class="font15 text-center visible-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>             
             </ul>
         </div>
-    </header>
-    <main>
-        <div class="container">
-            
-        </div>
-    </main>
+        <div></div>
+    </footer>
+
+
     <script src="../javaScripts/jquery-3.4.1.js"></script>
     <script src="../javaScripts/bpj.js"></script>
+    <script src="../javaScripts/contact.js"></script>
 
 
 </body>

@@ -41,6 +41,7 @@ $('.log-btn').click(function (){
 
   $('.title-of-login').fadeIn(500);
   $('.body-cover').fadeIn(500);
+  $('#map').fadeout(500);
 
 })
 

@@ -1,0 +1,13 @@
+#map{
+    cursor:grab ;
+    margin: 0 auto;
+    width: 80%;
+    height: 450px;
+    background-color: #eee;
+    border: 2px solid #aaa;
+    /* filter: drop-shadow(-4px 1px 5px gray);
+    -webkit-filter: drop-shadow(-4px 1px 5px gray); */
+}
+/* .testdiv{
+    height: 800px !important;
+} */
