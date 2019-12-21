@@ -16,8 +16,6 @@
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
     <script type="text/javascript" src="https://static.neshan.org/sdk/openlayers/5.3.0/ol.js"></script>
 
-    <!-- <link href="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.css" rel="stylesheet" type="text/css">
-    <script src="https://static.neshan.org/sdk/leaflet/1.4.0/leaflet.js" type="text/javascript"></script> -->
 </head>
 <body>
     <div class="body-cover"></div>
@@ -69,7 +67,7 @@
                 <li role="presentation"><a class="font15" href="./index.html"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
                 <!-- <li role="presentation"><a class="font15" style="font-weight: bold;" href="#">ورود / ثبت نام</a></li> -->
                 <!-- <li role="presentation"><a class="font13" style="font-weight: bold;" href="#">درباه ی ما</a></li> -->
-                <li role="presentation" class="active"><a class="font15" style="font-weight: bold;" href="#">تماس با ما</a></li>
+                <li role="presentation" class="active"><a class="font15" href="#">تماس با ما</a></li>
             </ul>
             <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
             <span class="date font17" id="date"></span>
@@ -84,14 +82,54 @@
                   <span class="font17 ways-to-contacting">راه های ارتباط با ما</span>
                   <span class="arrow-to-right"></span>
                   <span class="arrow-to-left"></span>
-                  <span class="pull-left">
+                  <span display:table-cell; class="pull-left">
                       <span class="glyphicon glyphicon-envelope"></span>
                       <span class="glyphicon glyphicon-map-marker"></span>
                       <span class="glyphicon glyphicon-phone-alt"></span>
-                      <span class="glyphicon glyphicon-earphone"></span>
+                      <span style="margin: 10px 10px 0 0 ;>
+                        <?xml version="1.0" ?><svg class="printer-svg-ico" height="60" viewBox="0 -9 48 48" width="60" xmlns="http://www.w3.org/2000/svg"><path d="M38 16H10c-3.31 0-6 2.69-6 6v12h8v8h24v-8h8V22c0-3.31-2.69-6-6-6zm-6 22H16V28h16v10zm6-14c-1.11 0-2-.89-2-2s.89-2 2-2c1.11 0 2 .89 2 2s-.89 2-2 2zM36 6H12v8h24V6z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
+                    </span>
                   </span>
                 </div>
-               
+               <div class="contact-info">
+                <table class="table text-center"> 
+                    <tbody> 
+                        <tr class="active"> 
+                            <th scope="row" class="text-center">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </th> 
+                            <td class="text-center font15">ایمیل:</td> 
+                            <td class="text-center font17">safadashtbpj@gmail.com</td> 
+                        </tr>  
+                        <tr> 
+                            <th scope="row" class="text-center">
+                                <span>
+                                    <?xml version="1.0" ?><svg class="printer-svg-ico" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M38 16H10c-3.31 0-6 2.69-6 6v12h8v8h24v-8h8V22c0-3.31-2.69-6-6-6zm-6 22H16V28h16v10zm6-14c-1.11 0-2-.89-2-2s.89-2 2-2c1.11 0 2 .89 2 2s-.89 2-2 2zM36 6H12v8h24V6z"/><path d="M0 0h48v48H0z" fill="none"/></svg>
+                                </span>
+                            </th> 
+                            <td class="text-center font15">فکس:</td> 
+                            <td class="text-center font17">65433530 021</td> 
+                        </tr> 
+                        <tr class="active"> 
+                            <th scope="row" class="text-center">
+                                <span class="glyphicon glyphicon-phone-alt"></span>
+                            </th> 
+                            <td class="text-center font15">تلفن تماس:</td> 
+                            <td class="text-center font17">65435516 021 - 65432711 021 - 65432755 021 (داخلی: 1059)</td> 
+                        </tr> 
+                        <tr style="border-bottom: 1px solid #ddd;"> 
+                            <th scope="row" class="text-center">
+                                <span class="glyphicon glyphicon-map-marker"></span>
+                            </th> 
+                            <td class="text-center font15">نشانی:</td> 
+                            <td class="text-center font15">تهران- صفادشت - میدان نبی اکرم (ص) - بلوار الغدیر - دانشگاه آزاد اسلامی واحد صفادشت</td> 
+                        </tr> 
+                        <tr> 
+                            <td class="text-center font17" colspan="3">رئیس باشگاه : دکترسپیده بهرامی</td> 
+                        </tr> 
+                    </tbody> 
+                </table> 
+               </div>
             </div>
             <div id="map"></div>
         </div>
