@@ -405,3 +405,37 @@ text-decoration: none;
   top: 0;
   display: none;
 }
+.workshop-table{
+  width: 60%;
+  margin: 0 auto;
+  padding: 5px 0;
+  border: 1px solid #ddd;
+}
+.workshop-title{
+  width: 60%;
+  margin: 0 auto;
+  background-color:rgb(238, 238, 255);
+  cursor: pointer;
+  padding: 5px 0;
+  border: 1px solid #ddd;
+}
+.workshop-title:hover{
+  width: 60%;
+  margin: 0 auto;
+  background-color:rgb(238, 238, 255);
+  cursor: pointer;
+  color: rgb(0, 0, 170);
+
+}
+.workshop{
+  display: none;
+
+}
+.fix{
+  height: 450px;
+}
+@media(max-width:767px){
+  .fix{
+    height: 650px;
+  }
+}

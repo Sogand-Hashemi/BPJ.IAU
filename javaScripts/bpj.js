@@ -51,3 +51,10 @@ $('.body-cover').click(function (){
   $('.body-cover').fadeOut(500);
 
 })
+
+$('.workshop-title').on('click', function(){
+  $('.workshop').slideUp();
+  if ($(this).next().is(':hidden')){
+      $(this).next().slideDown();
+  }
+})
