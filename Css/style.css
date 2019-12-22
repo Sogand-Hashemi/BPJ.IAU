@@ -282,7 +282,7 @@ margin: 0 auto;
   /*border: 1px solid red;
   */height: 450px;
   /* margin: 40px auto 0px; */
-  z-index: 10;
+  z-index: 101;
   background-color: #fff !important;
   position: absolute;
   right: 25%;
@@ -404,6 +404,7 @@ text-decoration: none;
   z-index: 0;
   top: 0;
   display: none;
+  z-index: 100;
 }
 .workshop-table{
   width: 60%;

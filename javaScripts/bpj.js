@@ -1,10 +1,6 @@
-// new persianDate().format(); // "۱۳۹۶-۰۱-۱۱ ۲۳:۳۳:۲۷ ب ظ" (when i run in my console)
-// persianDate.toLeapYearMode('algorithmic')
-
-// new persianDate([1396,6,17]).format('dddd');
 
 var formatOptions = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-// now.toLocaleDateString("fa-IR", formatOptions); 
+
 
 function myDate() {
   var d = new Date();
@@ -18,7 +14,7 @@ myDate();
 
 setInterval(function myTime(){  
 var d = new Date();
-var n = d.toLocaleDateString("fa-IR", formatOptions);
+// var n = d.toLocaleDateString("fa-IR", formatOptions);
 var t = d.toLocaleTimeString("fa-IR")
 // document.getElementById("date").innerHTML = n;
 document.getElementById("time").innerHTML = t;
