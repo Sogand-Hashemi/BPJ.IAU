@@ -72,11 +72,7 @@
 
 
                 $found_user= User::find_users_by_id(3);
-                $user = new User();
-                $user->id= $found_user['id'];         
-                $user->username= $found_user['username'];         
-                $user->email= $found_user['email'];         
-                $user->password= $found_user['password'];  
+                $user = User::instant($found_user);
                 
                 echo $user->id."<hr>";
                 echo $user->username."<hr>";
