@@ -71,13 +71,16 @@
                 // }
 
 
-                $found_user= User::find_users_by_id(3);
-                $user = User::instant($found_user);
+                $user= User::find_all_users();
+                // var_dump($user);
+                // $user = User::instant($found_user);
                 
-                echo $user->id."<hr>";
-                echo $user->username."<hr>";
-                echo $user->email."<hr>";
-                echo $user->password."<hr>";
+                    foreach($user as $user){
+                        echo $user->id."<hr>";
+                        echo $user->username."<hr>";
+                        echo $user->email."<hr>";
+                        echo $user->password."<hr>";
+                    }
 
 
 

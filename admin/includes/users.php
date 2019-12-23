@@ -13,22 +13,30 @@ class User{
         // global $dataBase;
         // $result= $dataBase-> Query("select * from `users`");
         // vaghti az static estefade konim dg do khat code bala ro nemikhaym
-        // return $result;
+
         return self::find_this_query("select * from `users`");
+
+        // return !empty($result) ? array_shift($result):false ;
     }
     public static function find_users_by_id($user_id){
         // global $dataBase;
         // $result= $dataBase-> Query("select * from `users` where `id`='$user_id' ");
         // vaghti az static estefade konim dg do khat code bala ro nemikhaym
         $result=self::find_this_query("select * from `users` where `id`='$user_id' ");
-        $found_user=mysqli_fetch_array($result);
-        return $found_user;
+        // $found_user=mysqli_fetch_array($result);
+        // return $found_user;
+        return !empty($result) ? array_shift($result):false ;
     }
 
     public static function find_this_query($sql){
         global $dataBase;
         $result_set=$dataBase-> Query($sql);
-        return $result_set;
+        // $the_object_array[]=array();
+        while($row=mysqli_fetch_array($result_set)){
+            $the_object_array[]=self::instant($row);
+        }
+        return $the_object_array;
+
     }
     public static function instant($the_record){
 
