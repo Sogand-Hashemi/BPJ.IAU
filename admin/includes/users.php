@@ -6,7 +6,8 @@ class Users{
     public $username;
     public $email;
     public $password;
-    
+//    protected static $dbTable = "users";
+//    protected static $dbTableFields = ['username', 'password', 'email', 'type'];
 
 
     public static function find_all_users(){
@@ -30,12 +31,12 @@ class Users{
         while($row=mysqli_fetch_array($result_set)){
             $the_object_array[]=self::instant($row);
         }
-        return $the_object_array;
+        return @$the_object_array;
 
     }
     public static function instant($the_record){
 
-        $the_object = new User();
+        $the_object = new Users();
         foreach($the_record as $the_attribute => $value){
             if($the_object->has_the_attribute($the_attribute)){
                 $the_object->$the_attribute= $value;
@@ -54,8 +55,8 @@ class Users{
         $username=$dataBase->escape_string($username);
         $password=$dataBase->escape_string($password);
         $sql="select * from `users` where";
-        $sql .="`username` = '$username$' AND `password` = '$password' limit 1 ";
-        die($sql);
+        $sql .="`username` = '$username' AND `password` = '$password' limit 1 ";
+//        die($sql);
         $resultArray= self::find_this_query($sql);
 
         return !empty($resultArray) ? array_shift($resultArray):false;

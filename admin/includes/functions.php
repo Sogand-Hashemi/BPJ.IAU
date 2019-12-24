@@ -1,8 +1,8 @@
 <?php
 
 spl_autoload_register (function ($class){
-     $class=strtolower($class);
-     $path="includes/$class.php";
+     $class = strtolower($class);
+     $path = "includes/$class.php";
 //     echo $path;
      if (file_exists($path)){
 //        require_once ('$path');
@@ -18,3 +18,4 @@ function redirect($location){
 }
 
 
+?>

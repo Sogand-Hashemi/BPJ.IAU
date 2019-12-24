@@ -27,7 +27,7 @@
         
         <div class="tabs-content text-center font19">
             <section id="sec-log-reg">
-                <form action="../Html/users.html" method="get">
+                <form action="users.php" method="get">
                     <div class="form-group">
                       <input type="text" class="form-control" id="exampleInputText" placeholder="نام و نام خانوادگی (به فارسی)"><br>
                       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
@@ -43,7 +43,7 @@
                   </form>  
             </section>
             <section id="sec-log-reg"> 
-                <form action="../Html/users.html" method="get">
+                <form action="users.php" method="get">
                     <div class="form-group">
                       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید"><br>
                       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور خود را وارد کنید">
@@ -64,7 +64,7 @@
     <header>
         <div class="first-div-h">
             <ul class="nav main-nav nav-pills">
-                <li role="presentation"><a class="font15" href="./index.html"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
+                <li role="presentation"><a class="font15" href="index.php"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
                 <!-- <li role="presentation"><a class="font15" style="font-weight: bold;" href="#">ورود / ثبت نام</a></li> -->
                 <!-- <li role="presentation"><a class="font13" style="font-weight: bold;" href="#">درباه ی ما</a></li> -->
                 <li role="presentation" class="active"><a class="font15" href="#">تماس با ما</a></li>

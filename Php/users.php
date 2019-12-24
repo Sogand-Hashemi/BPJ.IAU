@@ -21,7 +21,7 @@
     <header>
         <div class="first-div-h">
             <ul class="nav main-nav nav-pills">
-                <li role="presentation"><a class="font15" href="./index.html"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
+                <li role="presentation"><a class="font15" href="index.php"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
                 <li role="presentation" class="active"><a class="font15" href="#">تماس با ما</a></li>
             </ul>
             <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>

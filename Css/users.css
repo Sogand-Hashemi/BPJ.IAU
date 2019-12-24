@@ -63,6 +63,13 @@
     margin: 5px;
     cursor: pointer;
 }
+.info-account-li{
+    text-decoration: none;
+    color: white;
+}
+.info-account-li:hover{
+    text-decoration: none;
+}
 .info-account li:hover{
     margin: 5px;
     cursor: pointer;

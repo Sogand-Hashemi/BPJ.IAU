@@ -38,7 +38,7 @@ if (!$session->is_signed_in()){
 <header>
     <div class="first-div-h">
         <ul class="nav main-nav nav-pills">
-            <li role="presentation"><a class="font15" href="../Html/index.html"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
+            <li role="presentation"><a class="font15" href="../Php/index.php"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
             <li role="presentation" class="active"><a class="font15" href="#">تماس با ما</a></li>
         </ul>
         <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
@@ -51,7 +51,9 @@ if (!$session->is_signed_in()){
                 </span>
                 <ul class=" info-account text-center" id="infoAccount">
                     <li class="info-account-li text-center font15">تغییر گذرواژه</li>
-                    <li class="info-account-li text-center font15">خروج</li>
+                    <a class="info-account-li" href="./includes/logout.php">
+                        <li class="info-account-li text-center font15">خروج</li>
+                    </a>
                 </ul>
             </span>
     </div>

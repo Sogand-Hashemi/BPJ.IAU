@@ -13,7 +13,7 @@ if (@$_POST['login']){
         $session->login($userFound);
         redirect("index.php");
     }else{
-       echo  $Message= "<div style='background-color: #ffa7b9;color: white' class='font13'>نام کاربری یا گذرواژه صحیح نمی باشد<div/>";
+       $Message= "<div class='err-pass-un font17 text-center'>نام کاربری یا گذرواژه صحیح نمی باشد<div/>";
     }
 
 }
@@ -59,6 +59,7 @@ if (@$_POST['login']){
             <input type="submit" value="ورود" id="login" class="btn btn-info font15" name="login">
 
         </form>
+
     </div>
 
     <?php
