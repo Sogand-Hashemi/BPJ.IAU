@@ -1,6 +1,6 @@
 <?php
 
-class User{
+class Users{
 
     public $id;
     public $username;
@@ -10,21 +10,16 @@ class User{
 
 
     public static function find_all_users(){
-        // global $dataBase;
-        // $result= $dataBase-> Query("select * from `users`");
-        // vaghti az static estefade konim dg do khat code bala ro nemikhaym
+
 
         return self::find_this_query("select * from `users`");
 
-        // return !empty($result) ? array_shift($result):false ;
+
     }
     public static function find_users_by_id($user_id){
-        // global $dataBase;
-        // $result= $dataBase-> Query("select * from `users` where `id`='$user_id' ");
-        // vaghti az static estefade konim dg do khat code bala ro nemikhaym
+
         $result=self::find_this_query("select * from `users` where `id`='$user_id' ");
-        // $found_user=mysqli_fetch_array($result);
-        // return $found_user;
+
         return !empty($result) ? array_shift($result):false ;
     }
 
@@ -46,16 +41,24 @@ class User{
                 $the_object->$the_attribute= $value;
             }
         }
-        // $user = new User();
-        // $user->id= $found_user['id'];         
-        // $user->username= $found_user['username'];         
-        // $user->email= $found_user['email'];         
-        // $user->password= $found_user['password'];  
+
         return $the_object;
     }
     private function has_the_attribute($the_attribute){
         $object_properties = get_object_vars($this);
         return array_key_exists($the_attribute,$object_properties);
+    }
+
+    public static function verifyUsers($username, $password){
+        global $dataBase;
+        $username=$dataBase->escape_string($username);
+        $password=$dataBase->escape_string($password);
+        $sql="select * from `users` where";
+        $sql .="`username` = '$username$' AND `password` = '$password' limit 1 ";
+        die($sql);
+        $resultArray= self::find_this_query($sql);
+
+        return !empty($resultArray) ? array_shift($resultArray):false;
     }
 }
 
