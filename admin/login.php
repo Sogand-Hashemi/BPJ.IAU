@@ -27,8 +27,8 @@ if (@$_POST['login']){
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
     <link rel="stylesheet" href="../Css/style.css">
     <link rel="stylesheet" href="../Css/login.css">
     <title>صفحه ورود</title>
@@ -49,11 +49,11 @@ if (@$_POST['login']){
                 <div class="col-md-12"></div>
             </div>
             <div class="form-group">
-                <input type="text" class="textbox form-control font15" name="username" id="uesrname" placeholder="نام کاربری"
+                <input type="text" class="form-control font15" name="username" id="username" placeholder="نام کاربری"
                        required="required">
             </div>
             <div class="form-group">
-                <input type="password" class="textbox form-control font15" name="password" id="password" placeholder=" رمز عبور"
+                <input type="password" class="form-control font15" name="password" id="password" placeholder=" رمز عبور"
                        required="required">
             </div>
             <input type="submit" value="ورود" id="login" class="btn btn-info font15" name="login">

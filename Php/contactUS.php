@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>باشگاه پژوهشگران جوان و نخبگان</title>
     <link rel="icon" href="../images/YRC-Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
     <link rel="stylesheet" href="../Css/style.css">
     <link rel="stylesheet" href="../Css/contact.css">
 
@@ -27,11 +27,11 @@
         
         <div class="tabs-content text-center font19">
             <section id="sec-log-reg">
-                <form action="users.php" method="get">
+                <form action="personalPage.php" method="get">
                     <div class="form-group">
-                      <input type="text" class="form-control" id="exampleInputText" placeholder="نام و نام خانوادگی (به فارسی)"><br>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور ">
+                      <input required="required" type="text" class="form-control" id="exampleInputText" placeholder="نام و نام خانوادگی (به فارسی)"/><br>
+                      <input required="required" type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
+                      <input required="required" type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور ">
     
                         <div class="checkbox">
                             <label>
@@ -43,10 +43,10 @@
                   </form>  
             </section>
             <section id="sec-log-reg"> 
-                <form action="users.php" method="get">
+                <form action="personalPage.php" method="get">
                     <div class="form-group">
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید"><br>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور خود را وارد کنید">
+                      <input required="required" type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید"><br>
+                      <input required="required" type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور خود را وارد کنید">
     
                         <!-- <div class="checkbox">
                             <label>
@@ -82,7 +82,7 @@
                   <span class="font17 ways-to-contacting">راه های ارتباط با ما</span>
                   <span class="arrow-to-right"></span>
                   <span class="arrow-to-left"></span>
-                  <span display:table-cell; class="pull-left">
+                  <span style="display:table-cell;" class="pull-left">
                       <span class="glyphicon glyphicon-envelope"></span>
                       <span class="glyphicon glyphicon-map-marker"></span>
                       <span class="glyphicon glyphicon-phone-alt"></span>

@@ -11,6 +11,11 @@ if (!$session->is_signed_in()){
 
     if($dataBase->connection){
         $user = new Users();
+        $user->username="test";
+        $user->password="test321";
+        $user->email="test@gmail.com";
+
+        $user->create();
     }
 
 ?>
@@ -23,8 +28,8 @@ if (!$session->is_signed_in()){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>باشگاه پژوهشگران جوان و نخبگان</title>
     <link rel="icon" href="../images/YRC-Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
     <link rel="stylesheet" href="../Css/style.css">
     <link rel="stylesheet" href="../Css/users.css">
 

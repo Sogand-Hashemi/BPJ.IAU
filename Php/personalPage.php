@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>باشگاه پژوهشگران جوان و نخبگان</title>
     <link rel="icon" href="../images/YRC-Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
     <link rel="stylesheet" href="../Css/style.css">
     <link rel="stylesheet" href="../Css/users.css">
 
@@ -60,15 +60,15 @@
                        <form action="">
                         <div class="form-group">
                             <label for="exampleInputTextName" class="font15">نام و نام خانوادگی :</label>
-                            <input type="text" class="form-control font15" id="exampleInputTextName" placeholder="نام و نام خانوادگی ">
+                            <input required="required" type="text" class="form-control font15" id="exampleInputTextName" placeholder="نام و نام خانوادگی ">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="font15">آدرس ایمیل :</label>
-                            <input type="email" class="form-control font15" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
+                            <input required="required" type="email" class="form-control font15" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
                         </div>
                         <div class="form-group">
                         <label for="exampleInputText" class="font15">آدرس پستی :</label>
-                        <input type="text" class="form-control font15" id="exampleInputText" placeholder="آدرس پستی">
+                        <input required="required" type="text" class="form-control font15" id="exampleInputText" placeholder="آدرس پستی">
                         </div>
                         <div class="radio">
                             <label for="#" class="font15">جنسیت :</label>
