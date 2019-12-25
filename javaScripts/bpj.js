@@ -23,34 +23,34 @@ document.getElementById("time").innerHTML = t;
 
 
 
-$('.tabs li').click(function () {
+// $('.tabs li').click(function () {
+//
+//   $('.tabs li').removeClass('Active');
+//   $(this).addClass('Active');
+//
+//   var index = $(this).index();
+//   $('.tabs-content section').fadeOut(0);
+//   $('.tabs-content section').eq(index).fadeIn(250);
+// });
 
-  $('.tabs li').removeClass('Active');
-  $(this).addClass('Active');
+// $('.log-btn').click(function (){
+//
+//   $('.title-of-login').fadeIn(500);
+//   $('.body-cover').fadeIn(500);
+//   $('#map').fadeout(500);
+//
+// })
+//
+// $('.body-cover').click(function (){
+//
+//   $('.title-of-login').fadeOut(500);
+//   $('.body-cover').fadeOut(500);
+//
+// })
 
-  var index = $(this).index();
-  $('.tabs-content section').fadeOut(0);
-  $('.tabs-content section').eq(index).fadeIn(250);
-})
-
-$('.log-btn').click(function (){
-
-  $('.title-of-login').fadeIn(500);
-  $('.body-cover').fadeIn(500);
-  $('#map').fadeout(500);
-
-})
-
-$('.body-cover').click(function (){
-
-  $('.title-of-login').fadeOut(500);
-  $('.body-cover').fadeOut(500);
-
-})
-
-$('.workshop-title').on('click', function(){
-  $('.workshop').slideUp();
-  if ($(this).next().is(':hidden')){
-      $(this).next().slideDown();
-  }
-})
+// $('.workshop-title').on('click', function(){
+//   $('.workshop').slideUp();
+//   if ($(this).next().is(':hidden')){
+//       $(this).next().slideDown();
+//   }
+// })
