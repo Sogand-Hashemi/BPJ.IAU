@@ -2,7 +2,7 @@
 
 require_once("includes/init.php");
 if ($session->is_signed_in()) {
-    redirect("index.php");
+    redirect("userpage.php");
 }
 if (@$_POST['login']) {
     $username = trim($_POST["username"]);
@@ -11,7 +11,7 @@ if (@$_POST['login']) {
 
     if ($userFound) {
         $session->login($userFound);
-        redirect("index.php");
+        redirect("userpage.php");
     } else {
         $Message = "<div class='err-pass-un text-center'>نام کاربری یا گذرواژه صحیح نمی باشد<div/>";
     }
@@ -87,11 +87,11 @@ if (@$_POST['login']) {
 <header>
     <div class="first-div-h">
         <ul class="nav main-nav nav-pills">
-            <li role="presentation"><a class="font15" href="index.php"><i class="glyphicon glyphicon-home"></i> صفحه
+            <li role="presentation"><a class="font15" href="../Php/index.php"><i class="glyphicon glyphicon-home"></i> صفحه
                     اصلی</a></li>
             <!-- <li role="presentation"><a class="font15" style="font-weight: bold;" href="#">ورود / ثبت نام</a></li> -->
             <!-- <li role="presentation"><a class="font13" style="font-weight: bold;" href="#">درباه ی ما</a></li> -->
-            <li role="presentation"><a class="font15" href="#">تماس با ما</a></li>
+            <li role="presentation"><a class="font15" href="../Php/contactus.php">تماس با ما</a></li>
         </ul>
         <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
         <span class="date font17" id="date"></span>
@@ -127,7 +127,7 @@ if (@$_POST['login']) {
             <section id="sec-log-reg">
                 <form action="" method="post">
                     <div class="form-group">
-                        <input required="required" name="username" type="text" class="form-control" id="username" placeholder="ایمیل خود را وارد کنید"><br>
+                        <input required="required" name="username" type="text" class="form-control" id="username" placeholder="نام کاربری خود را وارد کنید"><br>
                         <input required="required" name="password" type="password" class="form-control" id="password" placeholder="رمز عبور خود را وارد کنید">
 
                         <!-- <div class="checkbox">

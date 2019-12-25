@@ -18,8 +18,8 @@
 
 </head>
 <body>
-    <div class="body-cover"></div>
-    <div class="title-of-login">
+    <!-- <div class="body-cover"></div> -->
+    <!-- <div class="title-of-login">
         <ul class="text-center tabs">
             <li class=" Active">ثبت نام</li >
             <li class="">ورود</li>
@@ -47,19 +47,19 @@
                     <div class="form-group">
                       <input required="required" type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید"><br>
                       <input required="required" type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور خود را وارد کنید">
-    
+     -->
                         <!-- <div class="checkbox">
                             <label>
                               <input style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
                             </label>
                           </div> -->
-                          <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
+                          <!-- <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
                           <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" type="submit" class="btn btn-success font15">ورود</button>
                     </div>
                   </form>
             </section>
-        </div>
-    </div>
+        </div> -->
+    <!-- </div> -->
 
     <header>
         <div class="first-div-h">
@@ -72,7 +72,7 @@
             <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
             <span class="date font17" id="date"></span>
             <span class="time font17" id="time"></span>
-            <span class="log-btn font17 date">ورود / ثبت نام</span>
+            <a href="../admin/login.php"><span class="log-btn font17 date">ورود / ثبت نام</span></a>
         </div>
     </header>
     <main>

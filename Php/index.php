@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>باشگاه پژوهشگران جوان و نخبگان</title>
     <link rel="icon" href="../images/YRC-Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../FreamWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../FrameWork/bootstrap-3.3.7-dist/css/bootstrap-rtl.css">
     <link rel="stylesheet" href="../Css/style.css">
 </head>
 <body>
-    <div class="body-cover"></div>
+    <!-- <div class="body-cover"></div>
     <div class="title-of-login">
         <ul class="text-center tabs">
             <li class=" Active">ثبت نام</li >
@@ -40,23 +40,21 @@
 
                     <div class="form-group">
                       <input type="email" class="form-control" name="username" required="required" id="username" placeholder="ایمیل خود را وارد کنید"><br>
-                      <input type="password" class="form-control" required="required" name="password" id="password" placeholder="رمز عبور خود را وارد کنید">
+                      <input type="password" class="form-control" required="required" name="password" id="password" placeholder="رمز عبور خود را وارد کنید"> -->
     
                         <!-- <div class="checkbox">
                             <label>
                               <input style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
                             </label>
                           </div> -->
-                          <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
+                          <!-- <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
                           <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" type="submit" class="btn btn-success font15">ورود</button>
                     </div>
-                    <?php
-                    echo @$Message
-                    ?>
+
                   </form>
             </section>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -73,7 +71,7 @@
             <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
             <span class="date font17" id="date"></span>
             <span class="time font17" id="time"></span>
-            <span class="log-btn font17 date">ورود / ثبت نام</span>
+            <a href="../admin/login.php"><span class="log-btn font17 date">ورود / ثبت نام</span></a>
         </div>
         <div class="second-div-h">
             <ul class="ul-for-title">
@@ -191,6 +189,25 @@
             
         </div>
     </main>
+
+    <footer>
+        <div class="first-div-f">
+            <ul class="ul-for-title">
+                <!-- <li class="font17 text-center">باشگاه پژوهشگران جوان و نخبگان،</li> -->
+                <li class="text-center"><img class="bpj-logo hidden-xs" src="../images/Logo.png" alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>   
+                <li class="font19 text-center hidden-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>             
+                <li class="text-center"><img class="small-logo visible-xs" src="../images/YRC-Logo.png" alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
+                <li class="font17 text-center visible-xs">باشگاه پژوهشگران جوان و نخبگان</li>
+                <li class="font15 text-center visible-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>           
+                <li class="font13 text-right">کليه حقوق اين سايت متعلق به دانشگاه آزاد اسلامی، واحد صفادشت می‌باشد.</li>             
+  
+            </ul>
+        </div>
+        <div></div>
+    </footer>
+
+
+
     <script src="../javaScripts/jquery-3.4.1.js"></script>
     <script src="../javaScripts/bpj.js"></script>
 

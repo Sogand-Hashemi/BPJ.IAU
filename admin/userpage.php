@@ -9,14 +9,15 @@ if (!$session->is_signed_in()){
 <?php
 
 
-    if($dataBase->connection){
-        $user = new Users();
-        $user->username="test";
-        $user->password="test321";
-        $user->email="test@gmail.com";
+    // if($dataBase->connection){
+    //     $user = new Users();
+    //     $user->username="test";
+    //     $user->password="test321";
+    //     $user->email="test@gmail.com";
 
-        $user->create();
-    }
+    //     $user->create();
+    // }
+    // echo $user;
 
 ?>
 
@@ -44,7 +45,7 @@ if (!$session->is_signed_in()){
     <div class="first-div-h">
         <ul class="nav main-nav nav-pills">
             <li role="presentation"><a class="font15" href="../Php/index.php"><i class="glyphicon glyphicon-home"></i>  صفحه اصلی</a></li>
-            <li role="presentation" class="active"><a class="font15" href="#">تماس با ما</a></li>
+            <li role="presentation" class="active"><a class="font15" href="../Php/index.php">تماس با ما</a></li>
         </ul>
         <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
         <span class="date font17" id="date"></span>
