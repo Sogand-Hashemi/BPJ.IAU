@@ -89,7 +89,7 @@ if (!$session->is_signed_in()) {
                     <span class="glyphicon glyphicon-user"></span>
                     <span class="glyphicon glyphicon-chevron-down"></span>
                 </span>
-                <ul class=" info-account text-center" id="infoAccount">
+                <ul class="info-account text-center" id="infoAccount">
                     <li class="info-account-li text-center font15">تغییر گذرواژه</li>
                     <a class="info-account-li" href="./includes/logout.php">
                         <li class="info-account-li text-center font15">خروج</li>

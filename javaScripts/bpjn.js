@@ -54,8 +54,11 @@ $('.workshop-title').on('click', function () {
 });
 
 
-$('.btn-err').on('click', function () {
+$(window).on('click', function (e) {
+    let $target = $(e.target);
 
-    $('.err-pass-un').fadeOut(500);
+    if (!$target.is('.err-pass-un')) {
+        $('.err-pass-un').fadeOut(500);
+    }
 
 });
