@@ -7,15 +7,15 @@ class Users
     public $username;
     public $email;
     public $password;
-//    protected static $dbTable = "users";
-//    protected static $dbTableFields = ['username', 'password', 'email', 'type'];
+    protected static $dbTable = "users";
+    protected static $dbTableFields = ['username', 'password', 'email', 'type'];
 
 
     public static function find_all_users()
     {
 
 
-        return self::find_this_query("select * from `users`");
+        return self::find_this_query("select * from `" . self::$dbTable . "`");
 
 
     }
@@ -23,7 +23,7 @@ class Users
     public static function find_users_by_id($user_id)
     {
 
-        $result = self::find_this_query("select * from `users` where `id`='$user_id' ");
+        $result = self::find_this_query("select * from `" . self::$dbTable . "` where `id`='$user_id' ");
 
         return !empty($result) ? array_shift($result) : false;
     }
@@ -64,7 +64,7 @@ class Users
         global $dataBase;
         $username = $dataBase->escape_string($username);
         $password = $dataBase->escape_string($password);
-        $sql = "select * from `users` where";
+        $sql = "select * from `" . self::$dbTable . "` where";
         $sql .= "`username` = '$username' AND `password` = '$password' limit 1 ";
 //        die($sql);
         $resultArray = self::find_this_query($sql);
@@ -72,11 +72,35 @@ class Users
         return !empty($resultArray) ? array_shift($resultArray) : false;
     }
 
+    public function properties()
+    {
+        $properties = array();
+        foreach (self::$dbTableFields as $dbField) {
+            if (property_exists($this, $dbField)) {
+                $properties[$dbField] = $this->$dbField;
+
+            }
+        }
+
+        return $properties;
+    }
+
+// for security (sql injection):
+    public function cleanProperties()
+    {
+        global $dataBase;
+        $cleanProperties = array();
+        foreach ($this->properties() as $key => $value) {
+            $cleanProperties[$key] = $dataBase->escape_string($value);
+        }
+        return $cleanProperties;
+    }
 
     public function create()
     {
         global $dataBase;
-        $sql = "INSERT INTO `users`(`username`,`password`,`email`)VALUES (";
+        $properties = $this->cleanProperties();
+        $sql = "INSERT INTO `" . self::$dbTable . "`(`username`,`password`,`email`)VALUES (";
         $sql .= "' " . $dataBase->escape_string($this->username) . "' ,";
         $sql .= "' " . $dataBase->escape_string($this->password) . "' ,";
         $sql .= "' " . $dataBase->escape_string($this->email) . " ')";
@@ -90,6 +114,37 @@ class Users
         }
 //        die($sql);
     }
+
+    public function update()
+    {
+        global $dataBase;
+        $sql = "UPDATE `" . self::$dbTable . "` SET ";
+        $sql .= "`username` = '" . $dataBase->escape_string($this->username) . "',";
+        $sql .= "`password` = '" . $dataBase->escape_string($this->password) . "',";
+        $sql .= "`email` = '" . $dataBase->escape_string($this->email) . "'";
+        $sql .= " WHERE `id` = " . $dataBase->escape_string($this->id);
+
+        $dataBase->Query($sql);
+        return (mysqli_affected_rows($dataBase->connection) == 1) ? true : false;
+//        die($sql);
+    }
+
+    public function delete()
+    {
+        global $dataBase;
+        $sql = "DELETE from `" . self::$dbTable . "`";
+        $sql .= " WHERE `id` = " . $dataBase->escape_string($this->id);
+
+        $dataBase->Query($sql);
+        return (mysqli_affected_rows($dataBase->connection) == 1) ? true : false;
+
+    }
+
+    public function save()
+    {
+        return isset($this->id) ? $this->update() : $this->create();
+    }
+
 }
 
 

@@ -111,7 +111,7 @@ if (@$_POST['login']) {
             <section id="sec-log-reg">
                 <form action="" method="">
                     <div class="form-group">
-                        <input required="required" type="text" class="form-control" id="exampleInputText" placeholder="نام و نام خانوادگی (به فارسی)"/><br>
+                        <input required="required" type="text" class="form-control" id="exampleInputText" placeholder="نام کاربری (به انگلیسی)"/><br>
                         <input required="required" type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
                         <input required="required" type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور ">
 
