@@ -167,7 +167,7 @@ if (@$_POST['login']) {
     </footer>
 
 <script src="../javaScripts/jquery-3.4.1.js"></script>
-<script src="../javaScripts/bpj.js"></script>
+<script src="../javaScripts/bpjn.js"></script>
 <script src="../javaScripts/contact.js"></script>
 
 </body>

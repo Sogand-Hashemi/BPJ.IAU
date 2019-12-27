@@ -1,7 +1,7 @@
 <?php
 require_once('includes/init.php');
 if (!$session->is_signed_in()) {
-    redirect("login.php");
+    redirect("../Php/index.php");
 }
 
 ?>
@@ -18,7 +18,6 @@ if (!$session->is_signed_in()) {
 //         $user->create();
 //     }
 //     echo $user;
-//
 
 
 //if ($dataBase->connection) {
@@ -171,7 +170,7 @@ if (!$session->is_signed_in()) {
 
 
 <script src="../javaScripts/jquery-3.4.1.js"></script>
-<script src="../javaScripts/bpj.js"></script>
+<script src="../javaScripts/bpjn.js"></script>
 <script src="../javaScripts/users.js"></script>
 
 

@@ -1,3 +1,34 @@
+<?php
+
+require_once("../admin/includes/init.php");
+if ($session->is_signed_in()) {
+    redirect("../admin/userpage.php");
+}
+if (@$_POST['login']) {
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+    $userFound = users::verifyUsers($username, $password);
+
+    if ($userFound) {
+        $session->login($userFound);
+        redirect("../admin/userpage.php");
+    } else {
+        $Message = "<div class='err-pass-un text-center'>نام کاربری یا گذرواژه صحیح نمی باشد<br><button class=\"font17 btn-err btn btn-danger\">Ok</button></div>";
+    }
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -11,52 +42,53 @@
     <link rel="stylesheet" href="../Css/style.css">
 </head>
 <body>
-    <!-- <div class="body-cover"></div>
+    <div class="body-cover"></div>
     <div class="title-of-login">
         <ul class="text-center tabs">
             <li class=" Active">ثبت نام</li >
             <li class="">ورود</li>
         </ul>
-        
+
         <div class="tabs-content text-center font19">
             <section id="sec-log-reg">
-                <form action="">
+                <form action="" method="">
                     <div class="form-group">
-                      <input required="required" type="text" class="form-control" id="exampleInputText" placeholder="نام و نام خانوادگی (به فارسی)"><br>
-                      <input required="required" type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
-                      <input  required="required" type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور ">
-    
+                        <input required="required" type="text" class="form-control" id="exampleInputText" placeholder="نام کاربری (به انگلیسی)"/><br>
+                        <input required="required" type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
+                        <input required="required" type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور ">
+
                         <div class="checkbox">
                             <label>
-                              <input style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
+                                <input style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
                             </label>
-                          </div>
-                          <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" type="submit" class="btn btn-success font15">ثبـت نام</button>
+                        </div>
+                        <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" type="submit" class="btn btn-success font15">ثبـت نام</button>
                     </div>
-                  </form>  
+                </form>
             </section>
             <section id="sec-log-reg">
-                <form action="">
-
+                <form action="" method="post">
                     <div class="form-group">
-                      <input type="email" class="form-control" name="username" required="required" id="username" placeholder="ایمیل خود را وارد کنید"><br>
-                      <input type="password" class="form-control" required="required" name="password" id="password" placeholder="رمز عبور خود را وارد کنید"> -->
-    
+                        <input required="required" name="username" type="text" class="form-control" id="username" placeholder="نام کاربری خود را وارد کنید"><br>
+                        <input required="required" name="password" type="password" class="form-control" id="password" placeholder="رمز عبور خود را وارد کنید">
+
                         <!-- <div class="checkbox">
                             <label>
                               <input style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
                             </label>
                           </div> -->
-                          <!-- <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
-                          <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" type="submit" class="btn btn-success font15">ورود</button>
+                        <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
+                        <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" value="ورود" id="login" name="login" type="submit" class="btn btn-success input-btn font15">
                     </div>
-
-                  </form>
+                </form>
             </section>
         </div>
-    </div> -->
 
+    </div>
 
+                <?php
+                echo @$Message;
+                ?>
 
 
 
@@ -71,7 +103,7 @@
             <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
             <span class="date font17" id="date"></span>
             <span class="time font17" id="time"></span>
-            <a href="../admin/login.php"><span class="log-btn font17 date">ورود / ثبت نام</span></a>
+            <a href="#"><span class="log-btn font17 date">ورود / ثبت نام</span></a>
         </div>
         <div class="second-div-h">
             <ul class="ul-for-title">
@@ -209,7 +241,7 @@
 
 
     <script src="../javaScripts/jquery-3.4.1.js"></script>
-    <script src="../javaScripts/bpj.js"></script>
+    <script src="../javaScripts/bpjn.js"></script>
 
 
 </body>

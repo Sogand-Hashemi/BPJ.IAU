@@ -7,6 +7,7 @@ class Users
     public $username;
     public $email;
     public $password;
+//    public $level;
     protected static $dbTable = "users";
     protected static $dbTableFields = ['username', 'password', 'email', 'type'];
 
