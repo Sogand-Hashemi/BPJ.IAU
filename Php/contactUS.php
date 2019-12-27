@@ -13,27 +13,11 @@ if (@$_POST['login']) {
         $session->login($userFound);
         redirect("../admin/userpage.php");
     } else {
-        $Message = "<div class='err-pass-un text-center'>نام کاربری یا گذرواژه صحیح نمی باشد<div/>";
+        $Message = "<div class='err-pass-un text-center'>نام کاربری یا گذرواژه صحیح نمی باشد<br><button class=\"font17 btn-err btn btn-danger\">Ok</button></div>";
     }
 
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -65,26 +49,33 @@ if (@$_POST['login']) {
 
     <div class="tabs-content text-center font19">
         <section id="sec-log-reg">
-            <form action="" method="post">
+            <form action="" method="">
                 <div class="form-group">
-                    <input required="required" type="text" class="form-control" id="exampleInputText" placeholder="نام کاربری (به انگلیسی)"/><br>
-                    <input required="required" type="email" class="form-control" id="exampleInputEmail1" placeholder="ایمیل خود را وارد کنید">
-                    <input required="required" type="password" class="form-control" id="exampleInputPassword1" placeholder="رمز عبور ">
+                    <input required="required" type="text" class="form-control" id="exampleInputText"
+                           placeholder="نام کاربری (به انگلیسی)"/><br>
+                    <input required="required" type="email" class="form-control" id="exampleInputEmail1"
+                           placeholder="ایمیل خود را وارد کنید">
+                    <input required="required" type="password" class="form-control" id="exampleInputPassword1"
+                           placeholder="رمز عبور ">
 
                     <div class="checkbox">
                         <label>
                             <input style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
                         </label>
                     </div>
-                    <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" type="submit" class="btn btn-success font15">ثبـت نام</button>
+                    <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
+                            type="submit" class="btn btn-success font15">ثبـت نام
+                    </button>
                 </div>
             </form>
         </section>
         <section id="sec-log-reg">
             <form action="" method="post">
                 <div class="form-group">
-                    <input required="required" name="username" type="text" class="form-control" id="username" placeholder="نام کاربری خود را وارد کنید"><br>
-                    <input required="required" name="password" type="password" class="form-control" id="password" placeholder="رمز عبور خود را وارد کنید">
+                    <input required="required" name="username" type="text" class="form-control" id="username"
+                           placeholder="نام کاربری خود را وارد کنید"><br>
+                    <input required="required" name="password" type="password" class="form-control" id="password"
+                           placeholder="رمز عبور خود را وارد کنید">
 
                     <!-- <div class="checkbox">
                         <label>
@@ -92,16 +83,18 @@ if (@$_POST['login']) {
                         </label>
                       </div> -->
                     <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
-                    <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;" value="ورود" id="login" name="login" type="submit" class="btn btn-success input-btn font15">
+                    <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
+                           value="ورود" id="login" name="login" type="submit" class="btn btn-success input-btn font15">
                 </div>
             </form>
         </section>
-        <?php
-        echo @$Message;
-        ?>
     </div>
-
 </div>
+
+<?php
+echo @$Message;
+?>
+
 
 <header>
     <div class="first-div-h">
@@ -123,8 +116,6 @@ if (@$_POST['login']) {
         <div class="contact">
             <div class="header-contact">
                 <span class="font17 ways-to-contacting">راه های ارتباط با ما</span>
-                <span class="arrow-to-right"></span>
-                <span class="arrow-to-left"></span>
                 <span style="display:table-cell;" class="pull-left">
                       <span class="glyphicon glyphicon-envelope"></span>
                       <span class="glyphicon glyphicon-map-marker"></span>
