@@ -79,7 +79,7 @@ if (!$session->is_signed_in()) {
         <ul class="nav main-nav nav-pills">
             <li role="presentation"><a class="font15" href="../Php/index.php"><i class="glyphicon glyphicon-home"></i>
                     صفحه اصلی</a></li>
-            <li role="presentation" class="active"><a class="font15" href="../Php/index.php">تماس با ما</a></li>
+            <li role="presentation"><a class="font15" href="../Php/contactUS.php">تماس با ما</a></li>
         </ul>
         <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
         <span class="date font17" id="date"></span>
@@ -154,17 +154,89 @@ if (!$session->is_signed_in()) {
 
 <footer>
     <div class="first-div-f">
-        <ul class="ul-for-title">
-            <!-- <li class="font17 text-center">باشگاه پژوهشگران جوان و نخبگان،</li> -->
-            <li class="text-center"><img class="bpj-logo hidden-xs" src="../images/Logo.png"
-                                         alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
-            <li class="font19 text-center hidden-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
-            <li class="text-center"><img class="small-logo visible-xs" src="../images/YRC-Logo.png"
-                                         alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
-            <li class="font17 text-center visible-xs">باشگاه پژوهشگران جوان و نخبگان</li>
-            <li class="font15 text-center visible-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
-            <li class="font13 text-right">کليه حقوق اين سايت متعلق به دانشگاه آزاد اسلامی، واحد صفادشت می‌باشد.</li>
-        </ul>
+        <div style="border-bottom: 1px solid #ddd5d5;padding: 10px;background-color: #E8E8FF;">
+            <div class="container">
+                <div class="row main-row-5-2">
+                    <div class="col-md-5 col-sm-4">
+                        <span>
+                        </span>
+                        <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
+                        <span class="font17">سایت های مرتبط</span>
+                        <div class="font15" style="padding-bottom:20px;">
+                            <div><a class="last-a-in-div-5" href="http://bpj.iau.ir/">باشگاه پژوهشگران جوان و نخبگان</a>
+                            </div>
+                            <div><a class="last-a-in-div-5" href="https://iau.ac.ir/">دانشگاه آزاد اسلامی</a></div>
+                            <div><a class="last-a-in-div-5" href="https://www.msrt.ir/fa">وزارت علوم تحقیقات و
+                                    فناوری</a></div>
+                            <div><a class="last-a-in-div-5" href="http://www.aiau.ir/">کانون فارغ التحصیلان دانشگاه آزاد
+                                    اسلامی</a></div>
+                            <div><a class="last-a-in-div-5" href="http://www.samabpj.ir/">باشگاه پژوهشگران جوان و نخبگان
+                                    سما</a></div>
+                            <div><a class="last-a-in-div-5" href="http://www.safaiau.ac.ir/">دانشگاه آزاد اسلامی واحد
+                                    صفادشت</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+
+                        <span>
+
+                        </span>
+                        <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
+                        <span class="font17">لینک های مرتبط</span>
+                        <div class="font15" style="padding-bottom:20px;">
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/research">پژوهش و فناوری
+                                    safaiau.ac.ir</a></div>
+                            <div><a class="a-in-div-5"
+                                    href="http://www.samabpj.ir/cp/page_files/869405869_www.bpj.ir_images_content_Asasnameeslah.pdf">اساسنامه
+                                    ی باشگاه</a></div>
+                            <div><a class="a-in-div-5"
+                                    href="http://www.samabpj.ir/cp/page_files/885530185_rahbordi.pdf">برنامه های راهبردی
+                                    باشگاه</a></div>
+                            <div><a class="a-in-div-5" href="http://journal.bpj.ir/">ابتکار و خلاقیت در علوم انسانی</a>
+                            </div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/CP/page_files/771074236_ozviyat1397.pdf">آیین
+                                    نامه عضویت در باشگاه</a></div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/InventionBank.aspx">بانک اختراعات</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3">
+
+                        <span>
+                        </span>
+                        <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
+                        <span class="font17">لینک های مرتبط</span>
+                        <div class="font15" style="padding-bottom:20px;">
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/edu-notes">اطلاعیه های
+                                    آموزشی</a></div>
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/culture">امور فرهنگی</a>
+                            </div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/CP/page_files/for.pdf">شرایط و عضویت
+                                    استعدادهای درخشان</a></div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/SRegister.aspx">تقاضای عضویت</a></div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/PaperBank.aspx">بانک مقالات</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 96%; margin: 0 auto;">
+            <ul class="ul-for-title">
+                <!--             <li class="font17 text-center">باشگاه پژوهشگران جوان و نخبگان،</li>-->
+                <br>
+                <li class="text-center"><img class="bpj-logo hidden-xs" src="../images/Logo.png"
+                                             alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
+                <li class="font19 text-center hidden-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
+                <li class="text-center"><img class="small-logo visible-xs" src="../images/YRC-Logo.png"
+                                             alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
+                <li class="font17 text-center visible-xs">باشگاه پژوهشگران جوان و نخبگان</li>
+                <li class="font15 text-center visible-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
+                <li class="font13 text-right">کليه حقوق اين سايت متعلق به دانشگاه آزاد اسلامی، واحد صفادشت می‌باشد.</li>
+
+            </ul>
+        </div>
     </div>
 </footer>
 

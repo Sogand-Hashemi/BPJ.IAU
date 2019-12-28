@@ -13,7 +13,7 @@ if (@$_POST['login']) {
         $session->login($userFound);
         redirect("../admin/userpage.php");
     } else {
-        $Message = "<div class='err-pass-un text-center'>نام کاربری یا گذرواژه صحیح نمی باشد<br><button class=\"font17 btn-err btn btn-danger\">Ok</button></div>";
+        $Message = "<div class='err-pass-un text-center'><?xml version=\"1.0\" ?><svg class='exit-svg' id=\"false-cross-reject-decline\" style=\"enable-background:new 0 0 15 15;\" version=\"1.1\" viewBox=\"0 0 15 15\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><path d=\"M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z\"/><polygon points=\"10.146,4.146 7.5,6.793 4.854,4.146 4.146,4.854 6.793,7.5 4.146,10.146 4.854,10.854 7.5,8.207 10.146,10.854   10.854,10.146 8.207,7.5 10.854,4.854 \"/></svg><div class='text-on-err-pass-un'>نام کاربری یا گذرواژه صحیح نمی باشد</div></div>";
     }
 }
 ?>
@@ -95,7 +95,7 @@ echo @$Message;
                     صفحه اصلی</a></li>
             <!-- <li role="presentation"><a class="font15" style="font-weight: bold;" href="#">ورود / ثبت نام</a></li> -->
             <!-- <li role="presentation"><a class="font13" style="font-weight: bold;" href="#">درباه ی ما</a></li> -->
-            <li role="presentation"><a class="font15" href="contactUS.php">تماس با ما</a></li>
+            <li role="presentation"><a class="font15" href="./contactUS.php">تماس با ما</a></li>
         </ul>
         <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
         <span class="date font17" id="date"></span>
@@ -224,20 +224,90 @@ echo @$Message;
 
 <footer>
     <div class="first-div-f">
-        <ul class="ul-for-title">
-            <!-- <li class="font17 text-center">باشگاه پژوهشگران جوان و نخبگان،</li> -->
-            <li class="text-center"><img class="bpj-logo hidden-xs" src="../images/Logo.png"
-                                         alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
-            <li class="font19 text-center hidden-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
-            <li class="text-center"><img class="small-logo visible-xs" src="../images/YRC-Logo.png"
-                                         alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
-            <li class="font17 text-center visible-xs">باشگاه پژوهشگران جوان و نخبگان</li>
-            <li class="font15 text-center visible-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
-            <li class="font13 text-right">کليه حقوق اين سايت متعلق به دانشگاه آزاد اسلامی، واحد صفادشت می‌باشد.</li>
+        <div style="border-bottom: 1px solid #ddd5d5;padding: 10px;background-color: #E8E8FF;">
+            <div class="container">
+                <div class="row main-row-5-2">
+                    <div class="col-md-5 col-sm-4">
+                        <span>
+                        </span>
+                        <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
+                        <span class="font17">سایت های مرتبط</span>
+                        <div class="font15" style="padding-bottom:20px;">
+                            <div><a class="last-a-in-div-5" href="http://bpj.iau.ir/">باشگاه پژوهشگران جوان و نخبگان</a>
+                            </div>
+                            <div><a class="last-a-in-div-5" href="https://iau.ac.ir/">دانشگاه آزاد اسلامی</a></div>
+                            <div><a class="last-a-in-div-5" href="https://www.msrt.ir/fa">وزارت علوم تحقیقات و
+                                    فناوری</a></div>
+                            <div><a class="last-a-in-div-5" href="http://www.aiau.ir/">کانون فارغ التحصیلان دانشگاه آزاد
+                                    اسلامی</a></div>
+                            <div><a class="last-a-in-div-5" href="http://www.samabpj.ir/">باشگاه پژوهشگران جوان و نخبگان
+                                    سما</a></div>
+                            <div><a class="last-a-in-div-5" href="http://www.safaiau.ac.ir/">دانشگاه آزاد اسلامی واحد
+                                    صفادشت</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
 
-        </ul>
+                        <span>
+
+                        </span>
+                        <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
+                        <span class="font17">لینک های مرتبط</span>
+                        <div class="font15" style="padding-bottom:20px;">
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/research">پژوهش و فناوری
+                                    safaiau.ac.ir</a></div>
+                            <div><a class="a-in-div-5"
+                                    href="http://www.samabpj.ir/cp/page_files/869405869_www.bpj.ir_images_content_Asasnameeslah.pdf">اساسنامه
+                                    ی باشگاه</a></div>
+                            <div><a class="a-in-div-5"
+                                    href="http://www.samabpj.ir/cp/page_files/885530185_rahbordi.pdf">برنامه های راهبردی
+                                    باشگاه</a></div>
+                            <div><a class="a-in-div-5" href="http://journal.bpj.ir/">ابتکار و خلاقیت در علوم انسانی</a>
+                            </div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/CP/page_files/771074236_ozviyat1397.pdf">آیین
+                                    نامه عضویت در باشگاه</a></div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/InventionBank.aspx">بانک اختراعات</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3">
+
+                        <span>
+                        </span>
+                        <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
+                        <span class="font17">لینک های مرتبط</span>
+                        <div class="font15" style="padding-bottom:20px;">
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/edu-notes">اطلاعیه های
+                                    آموزشی</a></div>
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/culture">امور فرهنگی</a>
+                            </div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/CP/page_files/for.pdf">شرایط و عضویت
+                                    استعدادهای درخشان</a></div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/SRegister.aspx">تقاضای عضویت</a></div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/PaperBank.aspx">بانک مقالات</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 96%; margin: 0 auto;">
+            <ul class="ul-for-title">
+                <!--             <li class="font17 text-center">باشگاه پژوهشگران جوان و نخبگان،</li>-->
+                <br>
+                <li class="text-center"><img class="bpj-logo hidden-xs" src="../images/Logo.png"
+                                             alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
+                <li class="font19 text-center hidden-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
+                <li class="text-center"><img class="small-logo visible-xs" src="../images/YRC-Logo.png"
+                                             alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
+                <li class="font17 text-center visible-xs">باشگاه پژوهشگران جوان و نخبگان</li>
+                <li class="font15 text-center visible-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
+                <li class="font13 text-right">کليه حقوق اين سايت متعلق به دانشگاه آزاد اسلامی، واحد صفادشت می‌باشد.</li>
+
+            </ul>
+        </div>
     </div>
-    <div></div>
 </footer>
 
 

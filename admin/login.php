@@ -13,7 +13,7 @@ if (@$_POST['login']) {
         $session->login($userFound);
         redirect("userpage.php");
     } else {
-        $Message = "<div class='err-pass-un text-center'>نام کاربری یا گذرواژه صحیح نمی باشد<div/>";
+        $Message = "<div class='err-pass-un text-center'>نام کاربری یا گذرواژه صحیح نمی باشد</div>";
     }
 
 }

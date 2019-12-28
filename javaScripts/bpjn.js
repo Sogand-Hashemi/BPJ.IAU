@@ -57,7 +57,9 @@ $('.workshop-title').on('click', function () {
 $(window).on('click', function (e) {
     let $target = $(e.target);
 
-    if (!$target.is('.err-pass-un')) {
+    if (!$target.is('.err-pass-un')&&
+        !$target.is('.text-on-err-pass-un')
+    ) {
         $('.err-pass-un').fadeOut(500);
     }
 
