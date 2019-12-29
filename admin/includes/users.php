@@ -7,9 +7,9 @@ class Users
     public $username;
     public $email;
     public $password;
-//    public $level;
+    public $level;
     protected static $dbTable = "users";
-    protected static $dbTableFields = ['username', 'password', 'email', 'type'];
+    protected static $dbTableFields = ['username', 'password', 'email'];
 
 
     public static function find_all_users()
@@ -101,10 +101,9 @@ class Users
     {
         global $dataBase;
         $properties = $this->cleanProperties();
-        $sql = "INSERT INTO `" . self::$dbTable . "`(`username`,`password`,`email`)VALUES (";
-        $sql .= "' " . $dataBase->escape_string($this->username) . "' ,";
-        $sql .= "' " . $dataBase->escape_string($this->password) . "' ,";
-        $sql .= "' " . $dataBase->escape_string($this->email) . " ')";
+//        die(var_dump($properties));
+        $sql = "INSERT INTO `" . self::$dbTable . "` (`" . implode('`,`', array_keys($properties)) . "`)VALUES (";
+        $sql .= "'" . implode("','", array_values($properties)) . "')";
 
         if ($dataBase->Query($sql)) {
             $this->id = $dataBase->the_insert_id();
@@ -118,11 +117,14 @@ class Users
 
     public function update()
     {
+        $properties = $this->cleanProperties();
+        $properties_pairs = array();
+        foreach ($properties as $key => $value){
+            $properties_pairs[] = "`{$key}` = '{$value}' ";
+        }
         global $dataBase;
         $sql = "UPDATE `" . self::$dbTable . "` SET ";
-        $sql .= "`username` = '" . $dataBase->escape_string($this->username) . "',";
-        $sql .= "`password` = '" . $dataBase->escape_string($this->password) . "',";
-        $sql .= "`email` = '" . $dataBase->escape_string($this->email) . "'";
+        $sql .= implode(",", $properties_pairs);
         $sql .= " WHERE `id` = " . $dataBase->escape_string($this->id);
 
         $dataBase->Query($sql);

@@ -52,7 +52,7 @@ if (@$_POST['login']) {
 
                     <div class="checkbox">
                         <label>
-                            <input style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
+                            <input required="required" style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
                         </label>
                     </div>
                     <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"

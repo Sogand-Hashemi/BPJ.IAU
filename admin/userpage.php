@@ -36,11 +36,11 @@ if (!$session->is_signed_in()) {
 //}
 
 //if ($dataBase->connection) {
-////    $user = users::find_users_by_id(5);
+////    $user = users::find_users_by_id(57);
 //    $user = new Users();
-//    $user->username = "mobina";
-//    $user->password = "987654";
-//    $user->email = "mobina@protonmail.com";
+//    $user->username = "tiiiiiiina";
+//    $user->password = "3333333";
+//    $user->email = "tina@yahoo.com";
 //    $user->save();
 //}
 
@@ -50,7 +50,7 @@ if (!$session->is_signed_in()) {
 ////    var_dump($user);
 //
 //}
-//
+
 
 ?>
 
