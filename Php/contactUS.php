@@ -76,6 +76,9 @@ if (isset($_POST['register'])) {
                     <input required="required" name="password" type="password" class="form-control"
                            id="exampleInputPassword1"
                            placeholder="رمز عبور ">
+                    <input required="required" name="passwordConf" type="password" class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="تکرار رمز عبور ">
 
                     <div class="checkbox">
                         <label>
@@ -84,8 +87,7 @@ if (isset($_POST['register'])) {
                         </label>
                     </div>
                     <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
-                           value="ثبـــت نام" id="register" name="register" type="submit"
-                           class="btn btn-success input-btn font15">
+                           value="ثبـــت نام" id="register" name="register" type="submit" class="btn btn-success input-btn font15">
                 </div>
             </form>
         </section>

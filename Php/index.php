@@ -68,6 +68,9 @@ if (isset($_POST['register'])) {
                     <input required="required" name="password" type="password" class="form-control"
                            id="exampleInputPassword1"
                            placeholder="رمز عبور ">
+                    <input required="required" name="passwordConf" type="password" class="form-control"
+                           id="exampleInputPassword1"
+                           placeholder="تکرار رمز عبور ">
 
                     <div class="checkbox">
                         <label>
