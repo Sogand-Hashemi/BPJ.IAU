@@ -34,7 +34,7 @@ class dataBase
     {
         $result = mysqli_query($this->connection, $sql);
         $this->confirm_Query($result);
-//        return $result;
+        return $result;
 
     }
 

@@ -101,11 +101,13 @@ class Users
     {
         global $dataBase;
         $properties = $this->cleanProperties();
+//        die(var_dump($properties));
         $sql = "INSERT INTO `" . self::$dbTable . "` (`" . implode('`,`', array_keys($properties)) . "`)VALUES (";
         $sql .= "'" . implode("','", array_values($properties)) . "')";
+
         if ($dataBase->Query($sql)) {
             $this->id = $dataBase->the_insert_id();
-            var_dump($this->id);
+//            var_dump($this->id); .......................................................
             return true;
         } else {
             return false;
