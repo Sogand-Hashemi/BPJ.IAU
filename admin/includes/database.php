@@ -23,6 +23,7 @@ class dataBase
         // another way:
 
         $this->connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $this->connection->set_charset("utf8");
         if ($this->connection->connect_errno) {
             die ("connection failed" . mysqli_connect_error());
         }
@@ -33,7 +34,7 @@ class dataBase
     {
         $result = mysqli_query($this->connection, $sql);
         $this->confirm_Query($result);
-        return $result;
+//        return $result;
 
     }
 

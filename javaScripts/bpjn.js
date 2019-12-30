@@ -64,3 +64,14 @@ $(window).on('click', function (e) {
     }
 
 });
+
+$(window).on('click', function (e) {
+    let $target = $(e.target);
+
+    if (!$target.is('.register-success')&&
+        !$target.is('.text-on-err-pass-un')
+    ) {
+        $('.register-success').fadeOut(500);
+    }
+
+});

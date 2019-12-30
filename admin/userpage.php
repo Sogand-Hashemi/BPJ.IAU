@@ -38,7 +38,7 @@ if (!$session->is_signed_in()) {
 //if ($dataBase->connection) {
 ////    $user = users::find_users_by_id(57);
 //    $user = new Users();
-//    $user->username = "tiiiiiiina";
+//    $user->username = "سوگند";
 //    $user->password = "3333333";
 //    $user->email = "tina@yahoo.com";
 //    $user->save();

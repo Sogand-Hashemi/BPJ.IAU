@@ -19,6 +19,22 @@ if (@$_POST['login']) {
 }
 ?>
 
+<?php
+
+if (isset($_POST['register'])) {
+    $user = new Users();
+    $user->fullname = $_POST['fullname'];
+    $user->username = $_POST['username'];
+    $user->email = $_POST['email'];
+    $user->password = $_POST['password'];
+    $user->save();
+
+
+    $Message = "<div class='register-success text-center'><?xml version=\"1.0\" ?><svg class='exit-svg' id=\"false-cross-reject-decline\" style=\"enable-background:new 0 0 15 15;\" version=\"1.1\" viewBox=\"0 0 15 15\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><path d=\"M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z\"/><polygon points=\"10.146,4.146 7.5,6.793 4.854,4.146 4.146,4.854 6.793,7.5 4.146,10.146 4.854,10.854 7.5,8.207 10.146,10.854   10.854,10.146 8.207,7.5 10.854,4.854 \"/></svg><div class='text-on-err-pass-un'>ثبـت نام با موفقیت انجام شد</div></div>";
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="fa">
@@ -49,23 +65,27 @@ if (@$_POST['login']) {
 
     <div class="tabs-content text-center font19">
         <section id="sec-log-reg">
-            <form action="" method="">
+            <form action="" method="post">
                 <div class="form-group">
-                    <input required="required" type="text" class="form-control" id="exampleInputText"
-                           placeholder="نام کاربری (به انگلیسی)"/><br>
-                    <input required="required" type="email" class="form-control" id="exampleInputEmail1"
+                    <input required="required" name="fullname" type="text" class="form-control" id="exampleInputText"
+                           placeholder="نام و نام خانوادگی (به فارسی)"/><br>
+                    <input required="required" name="username" type="text" class="form-control" id="exampleInputText"
+                           placeholder="نام کاربری (به انگلیسی)"/>
+                    <input required="required" name="email" type="email" class="form-control" id="exampleInputEmail1"
                            placeholder="ایمیل خود را وارد کنید">
-                    <input required="required" type="password" class="form-control" id="exampleInputPassword1"
+                    <input required="required" name="password" type="password" class="form-control"
+                           id="exampleInputPassword1"
                            placeholder="رمز عبور ">
 
                     <div class="checkbox">
                         <label>
-                            <input required="required" style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با آن موافقم
+                            <input required="required" style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با
+                            آن موافقم
                         </label>
                     </div>
-                    <button style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
-                            type="submit" class="btn btn-success font15">ثبـت نام
-                    </button>
+                    <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
+                           value="ثبـــت نام" id="register" name="register" type="submit"
+                           class="btn btn-success input-btn font15">
                 </div>
             </form>
         </section>
@@ -103,7 +123,7 @@ echo @$Message;
                     اصلی</a></li>
             <!-- <li role="presentation"><a class="font15" style="font-weight: bold;" href="#">ورود / ثبت نام</a></li> -->
             <!-- <li role="presentation"><a class="font13" style="font-weight: bold;" href="#">درباه ی ما</a></li> -->
-            <li role="presentation" class="active"><a class="font15" href="#">تماس با ما</a></li>
+            <li role="presentation" class="active"><a class="font15" href="./contactUS.php">تماس با ما</a></li>
         </ul>
         <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
         <span class="date font17" id="date"></span>
