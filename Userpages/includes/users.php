@@ -9,7 +9,7 @@ class Users
     public $password;
     public $fullname;
     protected static $dbTable = "users";
-    protected static $dbTableFields = ['username', 'password', 'email', 'fullname'];
+    protected static $dbTableFields = ['username', 'email', 'password', 'fullname'];
 
 
     public static function find_all_users()
@@ -119,7 +119,7 @@ class Users
     {
         $properties = $this->cleanProperties();
         $properties_pairs = array();
-        foreach ($properties as $key => $value){
+        foreach ($properties as $key => $value) {
             $properties_pairs[] = "`{$key}` = '{$value}' ";
         }
         global $dataBase;

@@ -1,37 +1,7 @@
 <?php
 
-require_once("../admin/includes/init.php");
-
-if ($session->is_signed_in()) {
-    redirect("../admin/userpage.php");
-}
-if (@$_POST['login']) {
-    $username = trim($_POST["username"]);
-    $password = trim($_POST["password"]);
-    $userFound = users::verifyUsers($username, $password);
-
-    if ($userFound) {
-        $session->login($userFound);
-        redirect("../admin/userpage.php");
-    } else {
-        $Message = "<div class='err-pass-un text-center'><?xml version=\"1.0\" ?><svg class='exit-svg' id=\"false-cross-reject-decline\" style=\"enable-background:new 0 0 15 15;\" version=\"1.1\" viewBox=\"0 0 15 15\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><path d=\"M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z\"/><polygon points=\"10.146,4.146 7.5,6.793 4.854,4.146 4.146,4.854 6.793,7.5 4.146,10.146 4.854,10.854 7.5,8.207 10.146,10.854   10.854,10.146 8.207,7.5 10.854,4.854 \"/></svg><div class='text-on-err-pass-un'>نام کاربری یا گذرواژه صحیح نمی باشد</div></div>";
-    }
-}
-?>
-
-
-<?php
-
-if (isset($_POST['register'])) {
-    $user = new Users();
-    $user->fullname = $_POST['fullname'];
-    $user->username = $_POST['username'];
-    $user->email = $_POST['email'];
-    $user->password = $_POST['password'];
-    $user->save();
-
-    $Message1 = "<div class='register-success text-center'><?xml version=\"1.0\" ?><svg class='exit-svg' id=\"false-cross-reject-decline\" style=\"enable-background:new 0 0 15 15;\" version=\"1.1\" viewBox=\"0 0 15 15\" xml:space=\"preserve\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><path d=\"M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z\"/><polygon points=\"10.146,4.146 7.5,6.793 4.854,4.146 4.146,4.854 6.793,7.5 4.146,10.146 4.854,10.854 7.5,8.207 10.146,10.854   10.854,10.146 8.207,7.5 10.854,4.854 \"/></svg><div class='text-on-err-pass-un'>ثبـت نام با موفقیت انجام شد</div></div>";
-}
+require_once("../Userpages/includes/init.php");
+require_once("../Userpages/includes/loginSignup.php")
 
 ?>
 
@@ -59,44 +29,47 @@ if (isset($_POST['register'])) {
         <section id="sec-log-reg">
             <form action="" method="post">
                 <div class="form-group">
-                    <input required="required" name="fullname" type="text" class="form-control" id="exampleInputText"
+                    <input  name="fullname" type="text" class="form-control" id="exampleInputText"
                            placeholder="نام و نام خانوادگی (به فارسی)"/><br>
-                    <input required="required" name="username" type="text" class="form-control" id="exampleInputText"
+                    <input  name="username" value="<?php echo $username; ?>" type="text"
+                           class="form-control" id="exampleInputText"
                            placeholder="نام کاربری (به انگلیسی)"/>
-                    <input required="required" name="email" type="email" class="form-control" id="exampleInputEmail1"
+                    <input  name="email" value="<?php echo $email; ?>" type="email"
+                           class="form-control" id="exampleInputEmail1"
                            placeholder="ایمیل خود را وارد کنید">
-                    <input required="required" name="password" type="password" class="form-control"
+                    <input  name="password" type="password" class="form-control"
                            id="exampleInputPassword1"
                            placeholder="رمز عبور ">
-                    <input required="required" name="passwordConf" type="password" class="form-control"
+                    <input " name="passwordConf" type="password" class="form-control"
                            id="exampleInputPassword1"
                            placeholder="تکرار رمز عبور ">
 
                     <div class="checkbox">
                         <label>
-                            <input required="required" style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با
+                            <input required="required"  style="width: 17px;" type="checkbox"> قوانین را مطالعه کردم و با
                             آن موافقم
                         </label>
                     </div>
                     <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
-                           value="ثبـــت نام" id="register" name="register" type="submit" class="btn btn-success input-btn font15">
+                           value="ثبـــت نام" id="register" name="register" type="submit"
+                           class="btn btn-success input-btn font15">
                 </div>
             </form>
         </section>
-                <section id="sec-log-reg">
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <input required="required" name="username" type="text" class="form-control" id="username"
-                                   placeholder="نام کاربری خود را وارد کنید"><br>
-                            <input required="required" name="password" type="password" class="form-control" id="password"
-                                   placeholder="رمز عبور خود را وارد کنید">
+        <section id="sec-log-reg">
+            <form action="" method="post">
+                <div class="form-group">
+                    <input required="required" name="username" type="text" class="form-control" id="username"
+                           placeholder="نام کاربری خود را وارد کنید"><br>
+                    <input required="required" name="password" type="password" class="form-control" id="password"
+                           placeholder="رمز عبور خود را وارد کنید">
 
-                            <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
-                            <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
-                                   value="ورود" id="login" name="login" type="submit" class="btn btn-success input-btn font15">
-                        </div>
-                    </form>
-                </section>
+                    <h4><a href="#">بازیابی رمز عبور(در صورت فراموشی رمز)</a></h4>
+                    <input style="margin-top: 10px; box-shadow: 1px 1px 4px 0px rgb(87, 87, 87); width: 40%;"
+                           value="ورود" id="login" name="login" type="submit" class="btn btn-success input-btn font15">
+                </div>
+            </form>
+        </section>
     </div>
 </div>
 
@@ -108,13 +81,36 @@ echo @$Message;
 echo @$Message1;
 ?>
 
+<?php
+if (count($errors) > 0):
+    ?>
+    <div class='err-pass-un text-center'>
+        <!--            <i class='glyphicon glyphicon-remove exit-svg'></i>-->
+        <svg class='exit-svg' id="false-cross-reject-decline" style="enable-background:new 0 0 15 15;" version="1.1"
+             viewBox="0 0 15 15" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"><path
+                    d="M7.5,0C3.364,0,0,3.364,0,7.5S3.364,15,7.5,15S15,11.636,15,7.5S11.636,0,7.5,0z M7.5,14C3.916,14,1,11.084,1,7.5  S3.916,1,7.5,1S14,3.916,14,7.5S11.084,14,7.5,14z"/>
+            <polygon
+                    points="10.146,4.146 7.5,6.793 4.854,4.146 4.146,4.854 6.793,7.5 4.146,10.146 4.854,10.854 7.5,8.207 10.146,10.854   10.854,10.146 8.207,7.5 10.854,4.854 "/></svg>
+    <?php
+    foreach ($errors as $error):
+        ?>
+        <div class='text-on-err-pass-un'><?php echo @$error; ?></div>
+    <?php
+    endforeach;
+    ?>
+    </div>
+<?php
+endif;
+?>
+
 <header>
     <div class="first-div-h">
         <ul class="nav main-nav nav-pills">
-            <li role="presentation" class="active"><a class="font15" href="./index.php"><i class="glyphicon glyphicon-home"></i>
+            <li role="presentation" class="active"><a class="font15" href="./index.php"><i
+                            class="glyphicon glyphicon-home"></i>
                     صفحه اصلی</a></li>
-            <!-- <li role="presentation"><a class="font15" style="font-weight: bold;" href="#">ورود / ثبت نام</a></li> -->
-            <!-- <li role="presentation"><a class="font13" style="font-weight: bold;" href="#">درباه ی ما</a></li> -->
+
             <li role="presentation"><a class="font15" href="./contactUS.php">تماس با ما</a></li>
         </ul>
         <span class="img-2lines hidden-sm hidden-xs hidden-md"></span>
@@ -124,7 +120,6 @@ echo @$Message1;
     </div>
     <div class="second-div-h">
         <ul class="ul-for-title">
-            <!-- <li class="font17 text-center">باشگاه پژوهشگران جوان و نخبگان،</li> -->
             <li class="text-center"><img class="bpj-logo hidden-xs" src="../images/Logo.png"
                                          alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
             <li class="font19 text-center hidden-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
@@ -253,16 +248,20 @@ echo @$Message1;
                         <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
                         <span class="font17">سایت های مرتبط</span>
                         <div class="font15" style="padding-bottom:20px;">
-                            <div><a class="last-a-in-div-5" href="http://bpj.iau.ir/">باشگاه پژوهشگران جوان و نخبگان</a>
+                            <div><a class="last-a-in-div-5" href="http://bpj.iau.ir/">باشگاه پژوهشگران جوان و
+                                    نخبگان</a>
                             </div>
                             <div><a class="last-a-in-div-5" href="https://iau.ac.ir/">دانشگاه آزاد اسلامی</a></div>
                             <div><a class="last-a-in-div-5" href="https://www.msrt.ir/fa">وزارت علوم تحقیقات و
                                     فناوری</a></div>
-                            <div><a class="last-a-in-div-5" href="http://www.aiau.ir/">کانون فارغ التحصیلان دانشگاه آزاد
+                            <div><a class="last-a-in-div-5" href="http://www.aiau.ir/">کانون فارغ التحصیلان دانشگاه
+                                    آزاد
                                     اسلامی</a></div>
-                            <div><a class="last-a-in-div-5" href="http://www.samabpj.ir/">باشگاه پژوهشگران جوان و نخبگان
+                            <div><a class="last-a-in-div-5" href="http://www.samabpj.ir/">باشگاه پژوهشگران جوان و
+                                    نخبگان
                                     سما</a></div>
-                            <div><a class="last-a-in-div-5" href="http://www.safaiau.ac.ir/">دانشگاه آزاد اسلامی واحد
+                            <div><a class="last-a-in-div-5" href="http://www.safaiau.ac.ir/">دانشگاه آزاد اسلامی
+                                    واحد
                                     صفادشت</a></div>
                         </div>
                     </div>
@@ -280,11 +279,14 @@ echo @$Message1;
                                     href="http://www.samabpj.ir/cp/page_files/869405869_www.bpj.ir_images_content_Asasnameeslah.pdf">اساسنامه
                                     ی باشگاه</a></div>
                             <div><a class="a-in-div-5"
-                                    href="http://www.samabpj.ir/cp/page_files/885530185_rahbordi.pdf">برنامه های راهبردی
+                                    href="http://www.samabpj.ir/cp/page_files/885530185_rahbordi.pdf">برنامه های
+                                    راهبردی
                                     باشگاه</a></div>
-                            <div><a class="a-in-div-5" href="http://journal.bpj.ir/">ابتکار و خلاقیت در علوم انسانی</a>
+                            <div><a class="a-in-div-5" href="http://journal.bpj.ir/">ابتکار و خلاقیت در علوم
+                                    انسانی</a>
                             </div>
-                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/CP/page_files/771074236_ozviyat1397.pdf">آیین
+                            <div><a class="a-in-div-5"
+                                    href="http://bpj.iau.ir/CP/page_files/771074236_ozviyat1397.pdf">آیین
                                     نامه عضویت در باشگاه</a></div>
                             <div><a class="a-in-div-5" href="http://bpj.iau.ir/InventionBank.aspx">بانک اختراعات</a>
                             </div>
@@ -298,13 +300,16 @@ echo @$Message1;
                         <!--                        <span style="width:18px; height:10px; display: inline-block;"></span>-->
                         <span class="font17">لینک های مرتبط</span>
                         <div class="font15" style="padding-bottom:20px;">
-                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/edu-notes">اطلاعیه های
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/edu-notes">اطلاعیه
+                                    های
                                     آموزشی</a></div>
-                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/culture">امور فرهنگی</a>
+                            <div><a class="a-in-div-5" href="http://www.safaiau.ac.ir/education/culture">امور
+                                    فرهنگی</a>
                             </div>
                             <div><a class="a-in-div-5" href="http://bpj.iau.ir/CP/page_files/for.pdf">شرایط و عضویت
                                     استعدادهای درخشان</a></div>
-                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/SRegister.aspx">تقاضای عضویت</a></div>
+                            <div><a class="a-in-div-5" href="http://bpj.iau.ir/SRegister.aspx">تقاضای عضویت</a>
+                            </div>
                             <div><a class="a-in-div-5" href="http://bpj.iau.ir/PaperBank.aspx">بانک مقالات</a></div>
                         </div>
                     </div>
@@ -323,7 +328,9 @@ echo @$Message1;
                                              alt=" عکس تصویر باشگاه پژوهشگران جوان و نخبگان"></li>
                 <li class="font17 text-center visible-xs">باشگاه پژوهشگران جوان و نخبگان</li>
                 <li class="font15 text-center visible-xs">دانشگاه آزاد اسلامی واحد صفادشت</li>
-                <li class="font13 text-right">کليه حقوق اين سايت متعلق به دانشگاه آزاد اسلامی، واحد صفادشت می‌باشد.</li>
+                <li class="font13 text-right">کليه حقوق اين سايت متعلق به دانشگاه آزاد اسلامی، واحد صفادشت
+                    می‌باشد.
+                </li>
 
             </ul>
         </div>

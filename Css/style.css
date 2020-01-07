@@ -465,6 +465,7 @@ body {
     filter: drop-shadow(2px 2px 100px gray);
     border: 5px groove #ab392e;
     text-align: center;
+    padding: 40px 10px;
 }
 
 .register-success {
@@ -482,11 +483,11 @@ body {
     filter: drop-shadow(2px 2px 100px gray);
     border: 1px solid green;
     text-align: center;
-    padding: 5px!important;
+    padding: 65px 10px!important;
 }
 
 .text-on-err-pass-un {
-    margin: 90px 10px;
+    margin: 10px 10px;
 }
 
 .exit-svg {
